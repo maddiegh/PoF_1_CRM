@@ -1,5 +1,4 @@
 connection: "redkite_snowflake"
-label: "PoF 1 CRM"
 
 # include all the views
 include: "*.view"
@@ -14,4 +13,6 @@ datagroup: pof_1_crm_default_datagroup {
 
 persist_with: pof_1_crm_default_datagroup
 
-explore: cpr_dump_20180218 {}
+explore: cpr_dump_20180218 {
+  label: "CPR Report"
+}

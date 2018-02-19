@@ -1,6 +1,8 @@
 view: cpr_dump_20180218 {
   sql_table_name: PUBLIC.CPR_DUMP_20180218 ;;
 
+  label: "CPR"
+
   measure: actives {
     type: sum
     sql: ${TABLE}.ACTIVES ;;
@@ -28,7 +30,7 @@ view: cpr_dump_20180218 {
     sql: ${TABLE}.BOUNCES ;;
   }
 
-  dimension: campaigncode {
+  dimension: campaign_code {
     type: string
     sql: ${TABLE}.CAMPAIGNCODE ;;
   }
@@ -48,7 +50,7 @@ view: cpr_dump_20180218 {
     sql: ${TABLE}.EMAILENGAGEMENTSTATUS ;;
   }
 
-  dimension: flowchartname {
+  dimension: flowchart_name {
     type: string
     sql: ${TABLE}.FLOWCHARTNAME ;;
   }
@@ -181,10 +183,28 @@ view: cpr_dump_20180218 {
     sql: ${TABLE}.SELECTION_DATE ;;
   }
 
-  dimension: senddatetime {
-    type: string
+  dimension_group: send {
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+      time
+    ]
+    convert_tz: no
     sql: ${TABLE}.SENDDATETIME ;;
   }
+
+  dimension: sent_date_filter {
+    description: "Field to be used for filtering as it autopopulated suggestions for dates"
+    type: string
+    sql: to_varchar(${TABLE}.SENDDATETIME,'DD-MON-YYYY') ;;
+    order_by_field: send_raw
+    full_suggestions: yes
+    }
 
   measure: sends {
     type: sum
@@ -257,6 +277,6 @@ view: cpr_dump_20180218 {
 
   measure: count {
     type: count
-    drill_fields: [flowchartname, mailing_name]
+    drill_fields: [flowchart_name, mailing_name]
   }
 }
