@@ -1,28 +1,30 @@
 view: cpr_dump_20180218 {
   sql_table_name: PUBLIC.CPR_DUMP_20180218 ;;
 
-  dimension: actives {
-    type: number
+  measure: actives {
+    type: sum
     sql: ${TABLE}.ACTIVES ;;
   }
 
-  dimension: bet_days {
-    type: number
+  measure: bet_days {
+    type: sum
     sql: ${TABLE}.BET_DAYS ;;
   }
 
-  dimension: bet_days_pooled_statistic {
-    type: number
-    sql: ${TABLE}.BET_DAYS_POOLED_STATISTIC ;;
-  }
+# I THINK THE MEASURE BELOW CANNOT BE AGGREGATED POST INITIAL AGGREGATION
+#   dimension: bet_days_pooled_statistic {
+#     type: number
+#     sql: ${TABLE}.BET_DAYS_POOLED_STATISTIC ;;
+#   }
 
-  dimension: bet_days_stdev {
-    type: number
-    sql: ${TABLE}.BET_DAYS_STDEV ;;
-  }
+# I THINK THE MEASURE BELOW CANNOT BE AGGREGATED POST INITIAL AGGREGATION
+#   dimension: bet_days_stdev {
+#     type: number
+#     sql: ${TABLE}.BET_DAYS_STDEV ;;
+#   }
 
-  dimension: bounces {
-    type: number
+  measure: bounces {
+    type: sum
     sql: ${TABLE}.BOUNCES ;;
   }
 
@@ -36,8 +38,8 @@ view: cpr_dump_20180218 {
     sql: ${TABLE}.CHANNEL_MATCH ;;
   }
 
-  dimension: clicks {
-    type: number
+  measure: clicks {
+    type: sum
     sql: ${TABLE}.CLICKS ;;
   }
 
@@ -51,25 +53,29 @@ view: cpr_dump_20180218 {
     sql: ${TABLE}.FLOWCHARTNAME ;;
   }
 
-  dimension: free_bets {
-    type: number
+  measure: free_bets {
+    type: sum
     sql: ${TABLE}.FREE_BETS ;;
   }
 
-  dimension: free_bets_normalised {
-    type: number
+  measure: free_bets_normalised {
+    type: sum
     sql: ${TABLE}.FREE_BETS_NORMALISED ;;
   }
 
-  dimension: free_bets_pooled_statistic {
-    type: number
-    sql: ${TABLE}.FREE_BETS_POOLED_STATISTIC ;;
-  }
 
-  dimension: free_bets_stdev {
-    type: number
-    sql: ${TABLE}.FREE_BETS_STDEV ;;
-  }
+# I THINK THE MEASURE BELOW CANNOT BE AGGREGATED POST INITIAL AGGREGATION
+#   dimension: free_bets_pooled_statistic {
+#     type: number
+#     sql: ${TABLE}.FREE_BETS_POOLED_STATISTIC ;;
+#   }
+
+
+# I THINK THE MEASURE BELOW CANNOT BE AGGREGATED POST INITIAL AGGREGATION
+#   dimension: free_bets_stdev {
+#     type: number
+#     sql: ${TABLE}.FREE_BETS_STDEV ;;
+#   }
 
   dimension: greater_than_from_date {
     type: yesno
@@ -111,25 +117,29 @@ view: cpr_dump_20180218 {
     sql: ${TABLE}.MAILING_NAME_BY_DAY_MATCH ;;
   }
 
-  dimension: margin {
-    type: number
+  measure: margin {
+    type: sum
     sql: ${TABLE}.MARGIN ;;
   }
 
-  dimension: margin_normalised {
-    type: number
+  measure: margin_normalised {
+    type: sum
     sql: ${TABLE}.MARGIN_NORMALISED ;;
   }
 
-  dimension: margin_pooled_statistic {
-    type: number
-    sql: ${TABLE}.MARGIN_POOLED_STATISTIC ;;
-  }
 
-  dimension: margin_stdev {
-    type: number
-    sql: ${TABLE}.MARGIN_STDEV ;;
-  }
+# I THINK THE MEASURE BELOW CANNOT BE AGGREGATED POST INITIAL AGGREGATION
+#   dimension: margin_pooled_statistic {
+#     type: number
+#     sql: ${TABLE}.MARGIN_POOLED_STATISTIC ;;
+#   }
+
+
+# I THINK THE MEASURE BELOW CANNOT BE AGGREGATED POST INITIAL AGGREGATION
+#   dimension: margin_stdev {
+#     type: number
+#     sql: ${TABLE}.MARGIN_STDEV ;;
+#   }
 
   dimension: name_match {
     type: yesno
@@ -176,30 +186,34 @@ view: cpr_dump_20180218 {
     sql: ${TABLE}.SENDDATETIME ;;
   }
 
-  dimension: sends {
-    type: number
+  measure: sends {
+    type: sum
     sql: ${TABLE}.SENDS ;;
   }
 
-  dimension: stakes {
-    type: number
+  measure: stakes {
+    type: sum
     sql: ${TABLE}.STAKES ;;
   }
 
-  dimension: stakes_normalised {
-    type: number
+  measure: stakes_normalised {
+    type: sum
     sql: ${TABLE}.STAKES_NORMALISED ;;
   }
 
-  dimension: stakes_pooled_statistic {
-    type: number
-    sql: ${TABLE}.STAKES_POOLED_STATISTIC ;;
-  }
 
-  dimension: stakes_stdev {
-    type: number
-    sql: ${TABLE}.STAKES_STDEV ;;
-  }
+# I THINK THE MEASURE BELOW CANNOT BE AGGREGATED POST INITIAL AGGREGATION
+#   dimension: stakes_pooled_statistic {
+#     type: number
+#     sql: ${TABLE}.STAKES_POOLED_STATISTIC ;;
+#   }
+
+
+# I THINK THE MEASURE BELOW CANNOT BE AGGREGATED POST INITIAL AGGREGATION
+#   dimension: stakes_stdev {
+#     type: number
+#     sql: ${TABLE}.STAKES_STDEV ;;
+#   }
 
   dimension: subject {
     type: string
@@ -211,33 +225,33 @@ view: cpr_dump_20180218 {
     sql: ${TABLE}.TREATMENTCODE ;;
   }
 
-  dimension: unique_bounces {
-    type: number
+  measure: unique_bounces {
+    type: sum
     sql: ${TABLE}.UNIQUE_BOUNCES ;;
   }
 
-  dimension: unique_clicks {
-    type: number
+  measure: unique_clicks {
+    type: sum
     sql: ${TABLE}.UNIQUE_CLICKS ;;
   }
 
-  dimension: unique_opens {
-    type: number
+  measure: unique_opens {
+    type: sum
     sql: ${TABLE}.UNIQUE_OPENS ;;
   }
 
-  dimension: unique_unsubscribes {
-    type: number
+  measure: unique_unsubscribes {
+    type: sum
     sql: ${TABLE}.UNIQUE_UNSUBSCRIBES ;;
   }
 
-  dimension: uniques {
-    type: number
+  measure: uniques {
+    type: sum
     sql: ${TABLE}.UNIQUES ;;
   }
 
-  dimension: unsubscribes {
-    type: number
+  measure: unsubscribes {
+    type: sum
     sql: ${TABLE}.UNSUBSCRIBES ;;
   }
 
